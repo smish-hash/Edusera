@@ -20,4 +20,4 @@ The application uses Modern Android Development at its core and uses architectur
 - LiveData : LiveData is the observable data which is reflected in the view.
 - YouTube API : To enable youtube videos to be able to play in the application itself.
 
-Check the code on Github: <a href="https://github.com/smish-hash/Edusera" target="blank">Code Link</a>.
+Check the app: <a href="https://drive.google.com/file/d/12W254QzwWohFEelCWGxFPAx2Vt7bP6lI/view?usp=sharing" target="blank">Application link</a>.
