@@ -15,6 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
+        tools:itemCount="5"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/course_data_item"/>
 

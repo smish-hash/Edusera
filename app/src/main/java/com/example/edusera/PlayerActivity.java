@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.example.edusera.Model.TopicModel;
 import com.example.edusera.Utils.YoutubeConfig;
 import com.example.edusera.databinding.ActivityPlayerBinding;
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -19,6 +20,7 @@ public class PlayerActivity extends YouTubeBaseActivity {
     private YouTubePlayerView playerView;
     private String param;
     private YouTubePlayer.OnInitializedListener onInitializedListener;
+    private TopicModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +29,13 @@ public class PlayerActivity extends YouTubeBaseActivity {
         setContentView(binding.getRoot());
 
         Intent intent = getIntent();
-        String link = intent.getStringExtra("videoLink");
+        model = (TopicModel) intent.getSerializableExtra("videoData");
+
+        String link = model.getVideoLink();
 
         playerView = binding.player;
+
+        binding.tvTitle.setText(model.getTitle());
 
         if (link != null) {
             Uri uri = Uri.parse(link);

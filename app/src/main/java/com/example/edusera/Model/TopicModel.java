@@ -2,7 +2,9 @@ package com.example.edusera.Model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class TopicModel {
+import java.io.Serializable;
+
+public class TopicModel implements Serializable {
 
     @SerializedName("title")
     private String title;

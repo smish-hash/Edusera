@@ -11,12 +11,6 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "course_feed_table")
 public class CourseFeedModel {
 
-    /*@PrimaryKey(autoGenerate = true)
-    @NonNull
-    @SerializedName("id")
-    @ColumnInfo(name = "id")
-    private Integer id;*/
-
     @SerializedName("courseID")
     @ColumnInfo(name = "courseID")
     private String courseID;

@@ -70,7 +70,7 @@ public class CourseDataAdapter extends RecyclerView.Adapter<CourseDataAdapter.Vi
 
             if (model.getVideoLink() != null) {
                 Intent intent = new Intent(context, PlayerActivity.class);
-                intent.putExtra("videoLink", model.getVideoLink());
+                intent.putExtra("videoData", model);
                 context.startActivity(intent);
             } else {
                 Snackbar.make(binding.getRoot(), "You are not yet enrolled, please enroll to view the video", Snackbar.LENGTH_LONG)

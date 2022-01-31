@@ -57,12 +57,20 @@ public class FirstFragment extends Fragment {
 
         courseFeedViewModel = new ViewModelProvider(this).get(CourseFeedViewModel.class);
 
+        return binding.getRoot();
+
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(view);
+
         adapter = new CourseFeedAdapter(getContext(), courseFeedList);
         adapter.setOnItemClickListener((model, position) -> {
             navController.navigate(R.id.action_FirstFragment_to_SecondFragment);
-            Log.d("api", "onClick: " + model.getTitle());
+//            Log.d("api", "onClick: " + model.getTitle());
         });
-        
+
         performRequest();
 
         courseFeedViewModel.getGetAllCourseFeeds().observe(getViewLifecycleOwner(), new Observer<List<CourseFeedModel>>() {
@@ -73,14 +81,6 @@ public class FirstFragment extends Fragment {
                 Log.d("api", "onChanged: " + courses);
             }
         });
-
-        return binding.getRoot();
-
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        navController = Navigation.findNavController(view);
     }
 
     private void performRequest() {
@@ -96,7 +96,8 @@ public class FirstFragment extends Fragment {
             @Override
             public void onResponse(Call<List<CourseFeedModel>> call, Response<List<CourseFeedModel>> response) {
                 if (response.isSuccessful()) {
-                    repository.insertCourseFeed(response.body());
+//                    repository.insertCourseFeed(response.body());
+                    courseFeedViewModel.insert(response.body());
                 }
             }
 

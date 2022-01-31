@@ -58,6 +58,13 @@ public class CourseDataFragment extends Fragment {
 
         courseDataViewModel = new ViewModelProvider(this).get(CourseDataViewModel.class);
 
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         adapter = new CourseDataAdapter(getContext(), courseDataList);
         adapter.setOnItemClickListener((model, position) -> {
 //            Toast.makeText(getContext(), "Topic Click " + model.getTitle(), Toast.LENGTH_SHORT).show();
@@ -73,13 +80,6 @@ public class CourseDataFragment extends Fragment {
                 adapter.getAllCourseData(courseDataModels);
             }
         });
-
-        return binding.getRoot();
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
     }
 
     private void performRequest() {
@@ -95,7 +95,8 @@ public class CourseDataFragment extends Fragment {
             @Override
             public void onResponse(Call<List<CourseDataModel>> call, Response<List<CourseDataModel>> response) {
                 if (response.isSuccessful()) {
-                    repository.insertCourseData(response.body());
+//                    repository.insertCourseData(response.body());
+                    courseDataViewModel.insert(response.body());
                 }
             }
 

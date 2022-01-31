@@ -1,5 +1,8 @@
 package com.example.edusera;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    private boolean isConnected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         /*appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
@@ -40,12 +45,46 @@ public class MainActivity extends AppCompatActivity {
         
         setListeners();
 
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+        if (activeNetwork != null) {
+            /*if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
+
+            } else if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
+
+            }*/
+            isConnected = true;
+        } else {
+            isConnected = false;
+        }
+
+        checkConnection();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        checkConnection();
     }
 
     private void setListeners() {
         binding.ivProfile.setOnClickListener(view -> {
             Toast.makeText(this, "My Profile", Toast.LENGTH_SHORT).show(); 
         });
+    }
+
+    private void checkConnection() {
+        if (!isConnected) {
+            Snackbar.make(binding.getRoot(), "Not connected to internet", Snackbar.LENGTH_INDEFINITE)
+                    .setAction("Dismiss", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                        }
+                    }).show();
+        }
     }
 
 /*    @Override

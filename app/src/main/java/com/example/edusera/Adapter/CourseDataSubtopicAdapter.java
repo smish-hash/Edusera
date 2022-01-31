@@ -78,7 +78,6 @@ public class CourseDataSubtopicAdapter extends RecyclerView.Adapter<CourseDataSu
                      TopicModel model = mList.get(position);
                      listener.onSubtopicClick(model, position);
                  }
-
              }
             });
         }
