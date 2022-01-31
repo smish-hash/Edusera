@@ -7,6 +7,7 @@ A simple and intuitive Android Application that shows the courses available and 
 <img width="1000" alt="sampleImages" src="app/src/main/res/drawable/edusera_ss.jpg">
 
 <b> Concepts & Functionality used : </b>
+JAVA is used as the programming language for this project.
 
 The application uses Modern Android Development at its core and uses architecture patterns to work efficiently. With over 39 jetpack libraries used, the major ones include -
 - Material Components : To create beautiful, smooth and interactive user interface.
