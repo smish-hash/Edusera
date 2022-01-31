@@ -8,7 +8,8 @@ A simple and intuitive Android Application that shows the courses available and 
 
 <b> Concepts & Functionality used : </b>
 
-The application uses Modern Android Development at its core and uses architecture patterns to work efficiently. 
+The application uses Modern Android Development at its core and uses architecture patterns to work efficiently. With over 39 jetpack libraries used, the major ones include -
+- Material Components : To create beautiful, smooth and interactive user interface.
 - MVVM : Handles all the background tasks, navigation, and lifecycle management.
 - Room : Data from the internet is stored in a room database making data persistent.
 - Retrofit : Retrofit handles all the api calls and is responsible for getting data from the internet.
