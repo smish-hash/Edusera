@@ -4,7 +4,7 @@
 <b> Proposed application : </b>
 A simple and intuitive Android Application that shows the courses available and its corresponding data using API calls and view the course video in itself. 
 
-<img width="1000" alt="sampleImages" src="C:\Users\KIIT\Desktop\Edusera\20220131_133728.jpg">
+<img width="1000" alt="sampleImages" src="app/src/main/res/drawable/edusera_ss.jpg">
 
 <b> Concepts & Functionality used : </b>
 
