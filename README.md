@@ -1,5 +1,5 @@
 # Edusera
-<img width="100" alt="sampleImages" src="C:\Users\KIIT\Desktop\Edusera\edusera.png">
+<img width="100" alt="sampleImages" src="app/src/main/res/drawable/edusera.png">
 
 <b> Proposed application : </b>
 A simple and intuitive Android Application that shows the courses available and its corresponding data using API calls and view the course video in itself. 
