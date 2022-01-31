@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/itemCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_8sdp"
+        app:cardUseCompatPadding="true"
+        android:animateLayoutChanges="true"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:animateLayoutChanges="true"
+            android:padding="@dimen/_16sdp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="HTML"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
+                android:textColor="@color/textGray"
+                app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
+                app:layout_constraintEnd_toStartOf="@+id/appCompatImageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/appCompatImageView" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_round_add_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/textGray" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/subTopicRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/appCompatImageView"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:listitem="@layout/course_data_title_item"
+                tools:itemCount="4"
+                android:layout_marginTop="@dimen/_16sdp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

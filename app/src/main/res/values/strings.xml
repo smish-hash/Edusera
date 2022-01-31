@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Edusera</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="BASE_URL">https://deveduseracourseapi.azurewebsites.net/api/</string>
+    <string name="course_feed_code">Le8sFCrmDgc3NLpLVzM2RK48gmtduyQrW6XV9yjIke5hSAihimK7jw==</string>
+    <string name="course_data_code">8grCHL0XGWYkJTheibZK1cKrV4YE8FfU9WwVe61qAuqyQkTaOpFnrQ==</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="subtopicTime">%s min</string>
+
+    <string name="playtime_is_over">https://www.youtube.com/watch?v=lne_pNe85xk</string>
+</resources>
